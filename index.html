@@ -22,13 +22,96 @@
 .option-item p{margin:0;font-size:14px;line-height:1.6;white-space:pre-wrap}
 .solutiontext{margin-bottom:4px}
 @media(min-width:760px){.option-list{grid-template-columns:1fr 1fr}}
+
+/* === Giao diện nâng cấp: sắc màu vui nhộn, chuyển động nhẹ === */
+:root{--blue:#5b4bdb;--blue2:#f0edff;--ink:#23234b;--muted:#6b6b91;--line:#e7e4f6;--shadow:0 16px 44px rgba(73,53,150,.13)}
+body{background:radial-gradient(ellipse at 8% 4%,#ffe5f1 0,transparent 31%),radial-gradient(ellipse at 93% 5%,#dff8ff 0,transparent 30%),radial-gradient(ellipse at 70% 80%,#f2e6ff 0,transparent 35%),#f8f7ff;background-attachment:fixed}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.42;background-image:radial-gradient(#b9afff 1px,transparent 1.5px),radial-gradient(#ffc5dc 1px,transparent 1.5px);background-size:37px 37px,53px 53px;background-position:0 0,18px 22px}
+.shell{max-width:1160px;padding-top:20px}
+.topbar{padding:11px 13px;border:1px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(255,255,255,.82);box-shadow:0 8px 28px rgba(76,59,145,.09);backdrop-filter:blur(14px)}
+.brandmark{background:linear-gradient(135deg,#ff78b7,#9258f5 55%,#4c8dff);border-radius:16px;box-shadow:0 7px 18px rgba(142,83,231,.28);animation:markFloat 3.8s ease-in-out infinite}
+.brandname{color:#30265e}.branddesc{color:#7a729b}
+.topactions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.musicbtn{border:1px solid #d9ccff;border-radius:13px;padding:9px 13px;font-weight:850;color:#5c35b9;background:linear-gradient(135deg,#f9f4ff,#ede6ff);box-shadow:0 5px 15px rgba(121,75,214,.12);transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
+.musicbtn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(121,75,214,.2)}
+.musicbtn.music-on{color:#fff;border-color:#8a5de9;background:linear-gradient(120deg,#9b5de5,#5b67df,#3a9be8);box-shadow:0 5px 18px rgba(105,75,222,.25)}
+.smallbtn,.ghostbtn{border-color:#e6dffa;background:rgba(255,255,255,.92);color:#514184}
+.hero{border-radius:30px;padding:clamp(25px,4vw,38px);background:linear-gradient(125deg,#6f3fd5 0%,#8b52e9 38%,#5c7bf4 72%,#45bfce 120%);box-shadow:0 20px 50px rgba(99,69,190,.24);isolation:isolate}
+.hero:before{content:"✦   ✧   ✦";position:absolute;right:18%;top:24px;font-size:28px;letter-spacing:18px;color:#fff8;transform:rotate(-8deg);animation:sparkle 4s ease-in-out infinite;pointer-events:none}
+.hero:after{content:"∑";right:20px;bottom:-82px;font:250px/1 Georgia,serif;color:#ffffff16;transform:rotate(-10deg)}
+.eyebrow{color:#f5edff}
+.hero h1{text-shadow:0 3px 16px rgba(40,21,96,.18)}
+.hero p{color:#f6f2ff;max-width:760px}
+.hero-stats{position:relative;z-index:1}
+.statpill{border-color:#ffffff57;background:#ffffff1c;box-shadow:inset 0 1px #ffffff1b;backdrop-filter:blur(3px)}
+.section-title{color:#41316f;margin-top:30px}
+.examgrid{gap:14px}
+.examcard{position:relative;overflow:hidden;min-height:165px;border:1px solid rgba(255,255,255,.98);border-radius:21px;background:linear-gradient(160deg,#fff 10%,#fcfaff 100%);box-shadow:0 9px 24px rgba(70,53,136,.08);transition:transform .22s,border-color .22s,box-shadow .22s}
+.examcard:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#ff85be,#a86bff,#5c9bff)}
+.examcard:after{content:"✦";position:absolute;right:13px;top:14px;color:#c8b8ff;font-size:18px;opacity:.72;transition:transform .25s}
+.examcard:nth-child(2):before{background:linear-gradient(90deg,#62d7c4,#64a9ff)}.examcard:nth-child(3):before{background:linear-gradient(90deg,#ffc467,#ff7b98)}.examcard:nth-child(4):before{background:linear-gradient(90deg,#8c83ff,#df8cff)}.examcard:nth-child(5):before{background:linear-gradient(90deg,#6ed5ed,#69d9a4)}
+.examcard:hover{transform:translateY(-5px) rotate(-.35deg);border-color:#c6b3ff;box-shadow:0 18px 35px rgba(83,60,158,.17)}
+.examcard:hover:after{transform:rotate(35deg) scale(1.25)}
+.examnum{background:linear-gradient(135deg,#f4eaff,#e8eaff);color:#7145ce;box-shadow:inset 0 0 0 1px #e2d7ff}
+.examcard:nth-child(2) .examnum{background:#e2fbf5;color:#138b7b}.examcard:nth-child(3) .examnum{background:#fff0dc;color:#bb6a15}.examcard:nth-child(4) .examnum{background:#f4e5ff;color:#9d48c2}.examcard:nth-child(5) .examnum{background:#e1f7ff;color:#227fa8}
+.examcard strong{color:#33275f;font-size:18px}.examcard span{color:#767097}
+.warning{border-color:#f5d990;background:linear-gradient(120deg,#fff9dc,#fff3e6);box-shadow:0 5px 16px rgba(172,127,36,.07)}
+.footnote{line-height:1.7}
+.gamehead{margin-top:18px}
+.tag{background:linear-gradient(120deg,#f0e8ff,#e4f1ff);color:#6042a8;border:1px solid #e0d5ff;padding:7px 12px}
+.backbtn{color:#6847c5}.backbtn:hover{text-decoration:underline}
+.progressbox{border:1px solid #e4dcfb;border-radius:19px;box-shadow:0 8px 22px rgba(91,71,165,.07);background:rgba(255,255,255,.94)}
+.progressline{height:10px;background:#f0ebff}.progressfill{background:linear-gradient(90deg,#fd83ba,#a16bfa,#5aabf6,#54d2bb);border-radius:99px;position:relative;overflow:hidden}
+.progressfill:after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,#ffffff8a,transparent);animation:shine 2.4s linear infinite}
+.questioncard{border:1px solid #e8defb;border-radius:24px;box-shadow:0 18px 45px rgba(76,58,139,.11);animation:cardIn .35s ease both}
+.questiontop{background:linear-gradient(90deg,#fff8fd,#f7f5ff 56%,#f0fbff);border-bottom:1px solid #f0eafb}
+.questiontop h2{color:#3c2a72}
+.smallhint{color:#8b75bc}
+.sourceimage{border-color:#e4daf8;border-radius:16px;box-shadow:0 5px 18px rgba(94,70,153,.05);transition:box-shadow .2s,border-color .2s}
+.sourceimage:hover{border-color:#c7b0ff;box-shadow:0 8px 24px rgba(94,70,153,.13)}
+.zoomtip{color:#83769f}
+.choices{gap:12px}
+.choice{border:1px solid #e5def7;border-radius:17px;background:linear-gradient(145deg,#fff,#fbfaff);box-shadow:0 4px 10px rgba(71,51,137,.035);transition:transform .16s,border-color .16s,box-shadow .16s,background .16s}
+.choice:hover{transform:translateY(-2px);border-color:#bca7f7;background:linear-gradient(145deg,#fff,#f5efff);box-shadow:0 8px 18px rgba(104,72,188,.1)}
+.letter{background:linear-gradient(140deg,#f4eaff,#e9efff);color:#6942b8;border:1px solid #e7dcff}
+.choice.chosen{border-color:#8e72ed;background:linear-gradient(140deg,#f5efff,#eaf2ff);box-shadow:0 0 0 3px #a995f52b}
+.choice.correct{background:linear-gradient(140deg,#ecfff5,#dff8eb);border-color:#65c795;color:#12754a;box-shadow:0 5px 14px #53b78420}
+.choice.incorrect{background:linear-gradient(140deg,#fff2f3,#ffe7e6);border-color:#f09d9d;color:#b3263a}
+.feedback{border-radius:16px;box-shadow:0 5px 15px rgba(70,53,136,.06);animation:feedbackIn .28s ease both}
+.feedback.ok{background:linear-gradient(110deg,#e6fff1,#ddf5e9);border:1px solid #b4e6c8;color:#176a46}
+.feedback.no{background:linear-gradient(110deg,#fff0f1,#ffe6e6);border:1px solid #f0c2c4;color:#a52d38}
+.solutionbox{border-color:#bcebd7;background:linear-gradient(135deg,#f0fff8,#f1f8ff 100%);border-radius:19px;box-shadow:0 8px 24px rgba(53,154,111,.07)}
+.solutiontitle{color:#156c57;display:flex;align-items:center;gap:8px}
+.option-review h4{color:#423176}.option-item{border-color:#e7e1f5;border-radius:14px;box-shadow:0 3px 9px rgba(70,53,136,.03)}.option-item.correct-option{border-color:#9bdcba;background:linear-gradient(140deg,#f2fff6,#e9fbf1)}
+.primarybtn{background:linear-gradient(120deg,#7652df,#5b71ea 58%,#4d9ee9);border-radius:15px;box-shadow:0 8px 20px rgba(101,76,204,.24);transition:transform .16s,box-shadow .16s,filter .16s}
+.primarybtn:hover{background:linear-gradient(120deg,#6944d5,#5266df 58%,#398cd9);transform:translateY(-2px);box-shadow:0 11px 25px rgba(101,76,204,.3)}
+.secondarybtn{border-color:#e4dcf5;border-radius:15px;background:linear-gradient(120deg,#fff,#faf7ff);color:#574486;transition:transform .16s,border-color .16s}
+.secondarybtn:hover:not(:disabled){transform:translateY(-1px);border-color:#c2aff7}
+.secondarybtn:disabled{opacity:.48;cursor:not-allowed}
+.resultshero{position:relative;overflow:hidden;border-radius:27px;background:linear-gradient(125deg,#7142d8,#8054e7 40%,#4f83ef 78%,#36b9c0);box-shadow:0 18px 48px rgba(94,67,183,.22)}
+.resultshero:after{content:"✦  ✨  ✦";position:absolute;right:8%;top:20px;font-size:27px;opacity:.45;letter-spacing:8px;animation:sparkle 3.4s ease-in-out infinite}
+.resultscore{text-shadow:0 4px 18px #24135b40}
+.resultstat{border:1px solid #ffffff1f;background:#ffffff19;backdrop-filter:blur(5px)}
+.reviewitem{border-color:#e5def7;border-radius:15px;transition:transform .15s,border-color .15s,box-shadow .15s}.reviewitem:hover{transform:translateY(-2px);border-color:#b8a3f5;box-shadow:0 8px 18px rgba(91,66,163,.1)}
+.modalinner{border:1px solid #e5dcfb;box-shadow:0 25px 80px #08071c50}
+@keyframes sparkle{0%,100%{opacity:.45;transform:translateY(0) rotate(-6deg)}50%{opacity:1;transform:translateY(-5px) rotate(4deg)}}
+@keyframes markFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes cardIn{from{opacity:.65;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes feedbackIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shine{to{transform:translateX(100%)}}
+@media(max-width:600px){.topbar{align-items:center;padding:9px}.topactions{gap:6px}.musicbtn,.smallbtn{padding:8px 9px;font-size:12px}.brand{gap:8px}.brandname{font-size:13px}.branddesc{font-size:10px}.hero:before{right:8%;font-size:20px;letter-spacing:8px}.hero:after{font-size:190px;right:0}.examcard{min-height:145px}.questioncard{border-radius:19px}.choices{gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
 <div class="shell">
   <header class="topbar">
     <div class="brand"><div class="brandmark">∑</div><div><div class="brandname">TOÁN 6 · TRẮC NGHIỆM</div><div class="branddesc">Ôn tập tương tác · Có hướng dẫn giải từng câu</div></div></div>
-    <button id="homeTop" class="smallbtn hidden" type="button">⌂ Chọn đề</button>
+    <div class="topactions">
+      <button id="musicToggle" class="musicbtn" type="button" aria-pressed="false" title="Bật nhạc nền vui nhộn">♫ Bật nhạc</button>
+      <button id="homeTop" class="smallbtn hidden" type="button">⌂ Chọn đề</button>
+    </div>
   </header>
   <main id="app" aria-live="polite"></main>
 </div>
@@ -46,7 +129,45 @@ let submitted = false;
 let reviewMode = false;
 let modalReturnFocus = null;
 let modalScale = 1;
+
 const getExamQuestions = n => QUESTIONS.filter(q => q.exam === n);
+
+// Nhạc nền được tạo ngay trong trình duyệt bằng Web Audio API nên không cần tệp âm thanh kèm theo.
+let audioContext=null, musicEnabled=false, musicLoop=null, musicStep=0;
+const melody=[523.25,659.25,783.99,659.25,587.33,659.25,880,783.99,698.46,587.33,659.25,783.99,523.25,587.33,659.25,493.88];
+const bassline=[130.81,130.81,196,196,146.83,146.83,220,220,174.61,174.61,261.63,261.63,130.81,130.81,196,196];
+function getAudioContext(){
+  if(!audioContext){const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return null;audioContext=new Ctx();}
+  if(audioContext.state==='suspended')audioContext.resume();
+  return audioContext;
+}
+function playSynthTone(freq,duration=.34,volume=.025,wave='sine',delay=0){
+  const ctx=getAudioContext();if(!ctx)return;
+  const osc=ctx.createOscillator(),gain=ctx.createGain(),now=ctx.currentTime+delay;
+  osc.type=wave;osc.frequency.setValueAtTime(freq,now);
+  gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume),now+.035);
+  gain.gain.setValueAtTime(Math.max(.0002,volume),now+duration*.55);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+  osc.connect(gain);gain.connect(ctx.destination);osc.start(now);osc.stop(now+duration+.02);
+}
+function musicTick(){
+  if(!musicEnabled)return;
+  const i=musicStep%melody.length;
+  playSynthTone(melody[i],.38,.018,'triangle');
+  if(musicStep%2===0)playSynthTone(bassline[i],.55,.012,'sine');
+  if(musicStep%4===0){const chords=[[261.63,329.63,392],[293.66,369.99,440],[246.94,311.13,369.99],[261.63,329.63,392]][Math.floor(musicStep/4)%4];chords.forEach((f,j)=>playSynthTone(f,.76,.004,'sine',j*.018));}
+  musicStep++;
+}
+function syncMusicButton(){const b=document.getElementById('musicToggle');if(!b)return;b.textContent=musicEnabled?'♫ Tắt nhạc':'♫ Bật nhạc';b.classList.toggle('music-on',musicEnabled);b.setAttribute('aria-pressed',String(musicEnabled));b.title=musicEnabled?'Tắt nhạc nền':'Bật nhạc nền vui nhộn';}
+function toggleMusic(){
+  const ctx=getAudioContext();if(!ctx){const b=document.getElementById('musicToggle');if(b)b.textContent='Âm thanh không hỗ trợ';return;}
+  musicEnabled=!musicEnabled;
+  if(musicEnabled){musicStep=0;musicTick();musicLoop=window.setInterval(musicTick,520);}
+  else{if(musicLoop!==null)window.clearInterval(musicLoop);musicLoop=null;}
+  syncMusicButton();
+}
+function playAnswerSound(correct){if(!musicEnabled)return;if(correct){playSynthTone(783.99,.16,.035,'sine');playSynthTone(987.77,.22,.028,'sine',.12);}else{playSynthTone(392,.18,.025,'triangle');playSynthTone(329.63,.22,.018,'triangle',.13);}}
+function playVictorySound(){if(!musicEnabled)return;[523.25,659.25,783.99,1046.5].forEach((f,i)=>playSynthTone(f,.55,.028,'triangle',i*.13));}
+
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function isCorrectAnswer(q,a){return isCorrectAnswerEnhanced(q,a);}
 function answerLabel(q){return Array.isArray(q.accepted)&&q.accepted.length>1 ? `Đáp án được chấp nhận: ${q.accepted.join(' và ')}. ${q.note||''}` : `Đáp án đúng: ${q.answer}.`;}
@@ -56,15 +177,15 @@ function renderHome(){
   setTopButton(false);
   app.innerHTML = `
     <section class="hero">
-      <div class="eyebrow">Bộ đề luyện tập · Lớp 6</div>
-      <h1>Thử thách Toán 6</h1>
+      <div class="eyebrow">✨ BỘ ĐỀ LUYỆN TẬP · LỚP 6</div>
+      <h1>Thử thách Toán 6 🎮</h1>
       <p>Chọn một đề, trả lời từng câu và xem kết quả sau khi hoàn thành. Ảnh của cả 60 câu đã được nhúng ngay trong tệp này. Sau mỗi lựa chọn, học sinh nhận phản hồi, lời giải từng bước và phân tích riêng từng phương án A, B, C, D.</p>
-      <div class="hero-stats"><span class="statpill">5 đề kiểm tra</span><span class="statpill">12 câu / đề</span><span class="statpill">60 câu trong bộ đề</span><span class="statpill">Có xem lại câu sai</span></div>
+      <div class="hero-stats"><span class="statpill">5 đề kiểm tra</span><span class="statpill">12 câu / đề</span><span class="statpill">60 câu trong bộ đề</span><span class="statpill">Có xem lại câu sai</span><span class="statpill">🎵 Nhạc nền vui nhộn</span></div>
     </section>
     <h2 class="section-title">Chọn đề để bắt đầu</h2>
     <p class="subtext">Mỗi lượt gồm 12 câu. Có thể quay lại câu trước và thay đổi lựa chọn trước khi nộp bài.</p>
     <section class="examgrid" aria-label="Danh sách đề">${EXAMS.map(n=>`<button class="examcard" data-exam="${n}" type="button"><div class="examnum">${n}</div><strong>Đề ${n}</strong><span>12 câu hỏi · Trắc nghiệm</span></button>`).join('')}</section>
-    <div class="warning"><strong>Hướng dẫn:</strong> chọn một trong 5 đề, bấm A/B/C/D để trả lời. Sau mỗi lựa chọn, em sẽ xem lời giải từng bước và phân tích riêng từng phương án A, B, C, D. Các câu hỏi được hiển thị từ ảnh trích trong PDF nguồn.</div>
+    <div class="warning"><strong>Hướng dẫn:</strong> chọn một trong 5 đề, bấm A/B/C/D để trả lời. Sau mỗi lựa chọn, em sẽ xem lời giải từng bước và phân tích riêng từng phương án A, B, C, D. Các câu hỏi được hiển thị từ ảnh trích trong PDF nguồn. Nhấn nút “♫ Bật nhạc” ở góc trên để nghe nhạc nền; có thể tắt bất cứ lúc nào.</div>
     <p class="footnote">Bản đơn tệp: cả 60 ảnh đã nhúng trực tiếp trong HTML, không cần thư mục hoặc tệp kèm theo. Có một câu trong đề nguồn được ghi chú về cách diễn đạt sau khi trả lời.</p>
   `;
   app.querySelectorAll('[data-exam]').forEach(btn=>btn.addEventListener('click',()=>startExam(Number(btn.dataset.exam))));
@@ -114,9 +235,9 @@ function renderQuestion(){
   else{
     document.getElementById('nextQuestion').addEventListener('click',()=>{
       if(currentIndex<qs.length-1){currentIndex++;renderQuestion();}
-      else {submitted=true;reviewMode=false;renderResults();}
+      else {submitted=true;reviewMode=false;playVictorySound();renderResults();}
     });
-    app.querySelectorAll('[data-choice]').forEach(btn=>btn.addEventListener('click',()=>{selected[currentIndex]=btn.dataset.choice;renderQuestion();}));
+    app.querySelectorAll('[data-choice]').forEach(btn=>btn.addEventListener('click',()=>{selected[currentIndex]=btn.dataset.choice;playAnswerSound(isCorrectAnswerEnhanced(q,btn.dataset.choice));renderQuestion();}));
   }
   const img=document.getElementById('questionImage');
   const openZoom=()=>showModal(q.image,`Đề ${activeExam}, Câu ${currentIndex+1}`);
@@ -155,6 +276,8 @@ document.getElementById('modalClose').addEventListener('click',hideModal);
 document.getElementById('imageModal').addEventListener('click',e=>{if(e.target.id==='imageModal')hideModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hideModal();});
 homeTop.addEventListener('click',()=>{if(activeExam!==null&&!submitted&&Object.keys(selected).length>0&&!confirm('Quay lại danh sách đề? Tiến độ của lượt này sẽ bị xóa.'))return;renderHome();});
+document.getElementById('musicToggle').addEventListener('click',toggleMusic);
+syncMusicButton();
 renderHome();
 </script>
 </body>
